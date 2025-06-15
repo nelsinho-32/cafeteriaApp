@@ -7,7 +7,8 @@ Bem-vindo ao **cafeteriaApp**, um projeto de loja virtual para cafeterias, que o
 ## **Funcionalidades**
 
 - **Carrossel de Produtos**: Exibe os produtos em destaque com imagens dinâmicas.
-- **Lanches Mais Vendidos**: Apresenta os lanches mais populares em formato de cards.
+- **Lanches Mais Vendidos**: Apresenta os lanches mais populares em formato de cards na página inicial.
+- **Cardápio Completo**: Exibe lanches adicionais na página de cardápio.
 - **Header e Footer Dinâmicos**: Componentes reutilizáveis para cabeçalho e rodapé.
 - **Tooltip nos Cards**: Exibe descrições completas ao passar o mouse sobre os textos truncados.
 - **Design Responsivo**: Adaptado para diferentes tamanhos de tela usando Bootstrap.
@@ -21,8 +22,11 @@ A estrutura do projeto foi organizada para facilitar a separação de responsabi
 ```
 cafeteriaApp/
 ├── assets/                # Arquivos estáticos (imagens)
+│   ├── brownie.webp
 │   ├── capuccino1.jpg
 │   ├── combo1.jpg
+│   ├── coxi1.webp
+│   ├── crois.webp
 │   ├── lancheIlus.jpg
 │   ├── logoCafeteria.webp
 │   ├── prod1.avif
@@ -34,11 +38,14 @@ cafeteriaApp/
 │   ├── sobremesa1.webp
 ├── src/                   # Código JavaScript
 │   ├── index.js           # Arquivo principal para inicialização
+│   ├── cardapio/          # Página de cardápio
+│   │   ├── cadapio.html
+│   │   ├── cardapio.css
 │   ├── components/        # Componentes reutilizáveis
-│   │   ├── Header.js      # Componente do cabeçalho
-│   │   ├── Footer.js      # Componente do rodapé
 │   │   ├── CardLanche.js  # Componente para os cards de lanches
-├── index.html             # Estrutura principal do HTML
+│   │   ├── Footer.js      # Componente do rodapé
+│   │   ├── Header.js      # Componente do cabeçalho
+├── index.html             # Estrutura principal da página inicial
 ├── index.css              # Estilização personalizada
 ├── package.json           # Configuração do projeto (dependências)
 ├── README.md              # Documentação do projeto
@@ -109,6 +116,7 @@ O arquivo `index.css` contém estilos personalizados, como:
 O arquivo `index.js` gerencia:
 - Renderização dos componentes dinâmicos.
 - Inicialização do carrossel e tooltips.
+- Lógica para exibir lanches exclusivos no `cadapio.html`.
 
 ---
 

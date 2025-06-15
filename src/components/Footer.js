@@ -1,9 +1,14 @@
 export function renderFooter() {
+
+    const basePath = window.location.pathname.includes('/src/cardapio/')
+        ? '../../'
+        : './';
+
     const footerHTML = `
       <div class="container">
           <div class="row text-start">
               <div class="col-md-3 mb-4 footer-logo">
-                  <img src="./assets/logoCafeteria.webp" alt="Logo" />
+                  <img src="${basePath}assets/logoCafeteria.webp" alt="Logo" />
                   <p class="mt-3 small">
                       Uma loja virtual especializada que entrega cafés de alta qualidade e equipamentos na sua porta.
                       Mais que um
