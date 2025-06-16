@@ -48,9 +48,9 @@ body {
 }
 
 .carrossel-img {
-    max-height: 600px; /* Define a altura máxima do carrossel */
-    object-fit: cover; /* Ajusta a imagem para cobrir o espaço sem distorção */
-    width: 100%; /* Garante que a imagem ocupe toda a largura */
+    max-height: 800px; 
+    object-fit: cover; 
+    width: 100%; 
 }
 
 .card-img-top {
@@ -71,7 +71,7 @@ body {
     text-overflow: ellipsis;
     max-width: 100%;
     display: block;
-    cursor: pointer; /* Indica que o texto tem interação */
+    cursor: pointer; 
 }
 
 .btn-buy {

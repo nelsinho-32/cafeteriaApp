@@ -1,6 +1,5 @@
 export function renderHeader() {
-    // Detecta se está na página principal ou na pasta cardapio
-    const basePath = window.location.pathname.includes('/src/cardapio/')
+    const basePath = window.location.pathname.includes('/src/')
         ? '../../'
         : './';
 
@@ -14,7 +13,7 @@ export function renderHeader() {
               <div class="d-flex align-items-center">
                   <a class="nav-link text-dark" href="${basePath}index.html">Home</a>
                   <a class="nav-link text-dark ms-3" href="${basePath}src/cardapio/cadapio.html">Cardápio</a>
-                  <a href="#"><i class="bi bi-cart3 ms-3 fs-4"></i></a>
+                  <a href="${basePath}src/cart/shoppingCart.html"><i class="bi bi-cart3 ms-3 fs-4"></i></a>
                   <div class="dropdown ms-3">
                       <a href="#" id="dropdownMenuCasa" data-bs-toggle="dropdown" aria-expanded="false">
                           <i class="bi bi-house-fill fs-4"></i>
@@ -35,7 +34,6 @@ export function renderHeader() {
                                   <i class="bi bi-cart-check me-2"></i> Meus Pedidos
                               </a>
                           </li>
-                          <li>
                               <hr class="dropdown-divider">
                           </li>
                           <li>

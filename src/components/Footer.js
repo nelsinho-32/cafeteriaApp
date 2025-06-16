@@ -1,6 +1,5 @@
 export function renderFooter() {
-
-    const basePath = window.location.pathname.includes('/src/cardapio/')
+    const basePath = window.location.pathname.includes('/src/')
         ? '../../'
         : './';
 
@@ -11,10 +10,7 @@ export function renderFooter() {
                   <img src="${basePath}assets/logoCafeteria.webp" alt="Logo" />
                   <p class="mt-3 small">
                       Uma loja virtual especializada que entrega cafés de alta qualidade e equipamentos na sua porta.
-                      Mais que um
-                      e-commerce, é um clube para amantes de café, oferecendo assinaturas, guias de preparo e uma
-                      comunidade para
-                      explorar novos sabores sem sair de casa.
+                      Mais que um e-commerce, é um clube para amantes de café, oferecendo assinaturas, guias de preparo e uma comunidade para explorar novos sabores sem sair de casa.
                   </p>
               </div>
               <div class="col-md-3 mb-4 footer-section">

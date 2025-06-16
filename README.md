@@ -9,6 +9,7 @@ Bem-vindo ao **cafeteriaApp**, um projeto de loja virtual para cafeterias, que o
 - **Carrossel de Produtos**: Exibe os produtos em destaque com imagens dinâmicas.
 - **Lanches Mais Vendidos**: Apresenta os lanches mais populares em formato de cards na página inicial.
 - **Cardápio Completo**: Exibe lanches adicionais na página de cardápio.
+- **Carrinho de Compras**: Permite adicionar, diminuir a quantidade e deletar produtos do carrinho.
 - **Header e Footer Dinâmicos**: Componentes reutilizáveis para cabeçalho e rodapé.
 - **Tooltip nos Cards**: Exibe descrições completas ao passar o mouse sobre os textos truncados.
 - **Design Responsivo**: Adaptado para diferentes tamanhos de tela usando Bootstrap.
@@ -41,10 +42,16 @@ cafeteriaApp/
 │   ├── cardapio/          # Página de cardápio
 │   │   ├── cadapio.html
 │   │   ├── cardapio.css
+│   ├── cart/              # Página do carrinho
+│   │   ├── shoppingCart.css
+│   │   ├── shoppingCart.html
 │   ├── components/        # Componentes reutilizáveis
 │   │   ├── CardLanche.js  # Componente para os cards de lanches
 │   │   ├── Footer.js      # Componente do rodapé
 │   │   ├── Header.js      # Componente do cabeçalho
+│   ├── profile/           # Página de perfil
+│   │   ├── profile.css
+│   │   ├── profile.html
 ├── index.html             # Estrutura principal da página inicial
 ├── index.css              # Estilização personalizada
 ├── package.json           # Configuração do projeto (dependências)
@@ -100,7 +107,7 @@ Os cards são criados dinamicamente pelo arquivo `CardLanche.js`. Cada card exib
 - Imagem do lanche.
 - Nome e descrição (com tooltip).
 - Preço.
-- Botões de compra e adicionar ao carrinho.
+- Botões de compra, adicionar ao carrinho, diminuir quantidade e deletar.
 
 ---
 
@@ -117,6 +124,7 @@ O arquivo `index.js` gerencia:
 - Renderização dos componentes dinâmicos.
 - Inicialização do carrossel e tooltips.
 - Lógica para exibir lanches exclusivos no `cadapio.html`.
+- Controle de quantidade e remoção de produtos no carrinho.
 
 ---
 

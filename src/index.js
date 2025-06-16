@@ -2,7 +2,6 @@ import { renderHeader } from './components/Header.js';
 import { renderFooter } from './components/Footer.js';
 import { criarCardLanche } from './components/CardLanche.js';
 
-// Detecta se está na página principal ou na pasta cardapio
 const basePath = window.location.pathname.includes('/src/cardapio/')
     ? '../../'
     : './';
@@ -78,27 +77,57 @@ const lanchesCardapio = [
     }
 ];
 
-// --- RENDERIZAÇÃO DA PÁGINA ---
 document.addEventListener('DOMContentLoaded', function () {
-    // Renderiza os componentes estáticos (Header e Footer)
     renderHeader();
     renderFooter();
 
-    // Renderiza os cards no index.html
     const lanchesContainer = document.getElementById('lanches-container');
     if (lanchesContainer) {
         lanchesContainer.innerHTML = lanchesIndex.map(lanche => criarCardLanche(lanche)).join('');
     }
 
-    // Renderiza os cards no cadapio.html
+    // cards no cadapio.html
     const cardapioContainer = document.getElementById('cardapio-container');
     if (cardapioContainer) {
         cardapioContainer.innerHTML = lanchesCardapio.map(lanche => criarCardLanche(lanche)).join('');
     }
 
-    // Inicializa os Tooltips (para as descrições dos cards)
+    // Tooltips
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[title]'));
     tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
+    //adicionar itens ao carrinho
+    const addButtons = document.querySelectorAll('.add-item');
+    addButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const quantityBadge = this.closest('.d-flex').querySelector('.quantity');
+            let quantity = parseInt(quantityBadge.textContent);
+            quantity += 1;
+            quantityBadge.textContent = quantity;
+        });
+    });
+
+    //diminuir itens do carrinho
+    const decreaseButtons = document.querySelectorAll('.decrease-item');
+    decreaseButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const quantityBadge = this.closest('.d-flex').querySelector('.quantity');
+            let quantity = parseInt(quantityBadge.textContent);
+            if (quantity > 1) {
+                quantity -= 1;
+                quantityBadge.textContent = quantity;
+            }
+        });
+    });
+
+    //deletar itens do carrinho
+    const deleteButtons = document.querySelectorAll('.delete-item');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const card = this.closest('.col');
+            card.remove();
+        });
     });
 });
