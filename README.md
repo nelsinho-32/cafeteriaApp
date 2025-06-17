@@ -10,6 +10,9 @@ Bem-vindo ao **cafeteriaApp**, um projeto de loja virtual para cafeterias, que o
 - **Lanches Mais Vendidos**: Apresenta os lanches mais populares em formato de cards na página inicial.
 - **Cardápio Completo**: Exibe lanches adicionais na página de cardápio.
 - **Carrinho de Compras**: Permite adicionar, diminuir a quantidade e deletar produtos do carrinho.
+- **Página de Login e Cadastro**: Interface para autenticação e registro de usuários.
+- **Configurações de Perfil**: Gerencie informações pessoais, endereços e formas de pagamento.
+- **Pedidos**: Visualize o histórico de pedidos e seus status.
 - **Header e Footer Dinâmicos**: Componentes reutilizáveis para cabeçalho e rodapé.
 - **Tooltip nos Cards**: Exibe descrições completas ao passar o mouse sobre os textos truncados.
 - **Design Responsivo**: Adaptado para diferentes tamanhos de tela usando Bootstrap.
@@ -37,8 +40,11 @@ cafeteriaApp/
 │   ├── prodIni.webp
 │   ├── sandu1.jpg
 │   ├── sobremesa1.webp
-├── src/                   # Código JavaScript
+├── src/                   # Código JavaScript e páginas
 │   ├── index.js           # Arquivo principal para inicialização
+│   ├── cadastro/          # Página de cadastro
+│   │   ├── register.css
+│   │   ├── register.html
 │   ├── cardapio/          # Página de cardápio
 │   │   ├── cadapio.html
 │   │   ├── cardapio.css
@@ -49,6 +55,15 @@ cafeteriaApp/
 │   │   ├── CardLanche.js  # Componente para os cards de lanches
 │   │   ├── Footer.js      # Componente do rodapé
 │   │   ├── Header.js      # Componente do cabeçalho
+│   ├── login/             # Página de login
+│   │   ├── login.css
+│   │   ├── login.html
+│   ├── pedidos/           # Página de pedidos
+│   │   ├── orders.css
+│   │   ├── orders.html
+│   ├── perfilConfigs/     # Página de configurações de perfil
+│   │   ├── perfilConfigs.css
+│   │   ├── perfilConfigs.html
 │   ├── profile/           # Página de perfil
 │   │   ├── profile.css
 │   │   ├── profile.html
@@ -114,7 +129,7 @@ Os cards são criados dinamicamente pelo arquivo `CardLanche.js`. Cada card exib
 ## **Personalização**
 
 ### **Estilização**
-O arquivo `index.css` contém estilos personalizados, como:
+Os arquivos CSS específicos para cada página contêm estilos personalizados, como:
 - Ajustes para o carrossel.
 - Estilização dos cards.
 - Cores e espaçamentos.
