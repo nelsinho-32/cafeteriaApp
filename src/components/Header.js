@@ -7,14 +7,16 @@ export function renderHeader() {
       <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm nav-bar">
           <div class="container">
               <a class="navbar-brand d-flex align-items-center" href="${basePath}index.html">
-                  <img src="${basePath}assets/logoCafeteria.webp" alt="logo" />
+                  <img src="${basePath}assets/images/logoCafeteria.webp" alt="logo" />
                   <span class="ms-2 fw-bold">Doce Esquina</span>
               </a>
               <div class="d-flex align-items-center">
                   <a class="nav-link text-dark" href="${basePath}index.html">Home</a>
                   <a class="nav-link text-dark ms-3" href="${basePath}src/cardapio/cadapio.html">Cardápio</a>
-                  <div class="dropdown ms-3">
-                    <a href="#"><i class="bi bi-bell ms-3 text-primary"></i></a>
+                  <div class="dropdown ms-3" onmouseover="(event)=>{console.log("testando");}">
+                    <a href="#" class="modal-trigger" onmouseover="()">
+                        <i class="bi bi-bell ms-3 text-primary"></i>
+                    </a>
                   </div>
                   <a href="${basePath}src/cart/shoppingCart.html"><i class="bi bi-cart3 ms-3 fs-4"></i></a>
                   <div class="dropdown ms-3">
@@ -54,6 +56,27 @@ export function renderHeader() {
               </div>
           </div>
       </nav>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="myModalLabel">Notificações</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      Aqui estão suas notificações mais recentes.
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  </div>
+              </div>
+          </div>
+      </div>
     `;
     document.getElementById('header-placeholder').innerHTML = headerHTML;
+
+    function exibirClickNotification(event) {
+        console.log('Exibir notificação');
+    }
 }

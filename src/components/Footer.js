@@ -7,7 +7,7 @@ export function renderFooter() {
       <div class="container">
           <div class="row text-start">
               <div class="col-md-3 mb-4 footer-logo">
-                  <img src="${basePath}assets/logoCafeteria.webp" alt="Logo" />
+                  <img src="${basePath}assets/images/logoCafeteria.webp" alt="Logo" />
                   <p class="mt-3 small">
                       Uma loja virtual especializada que entrega cafés de alta qualidade e equipamentos na sua porta.
                       Mais que um e-commerce, é um clube para amantes de café, oferecendo assinaturas, guias de preparo e uma comunidade para explorar novos sabores sem sair de casa.

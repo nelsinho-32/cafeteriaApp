@@ -7,10 +7,11 @@
     <title>Carrinho - Doce Esquina</title>
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
     <link rel="stylesheet" href="shoppingCart.css">
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../src/index.js" type="module" defer></script>
+    <script src="shoppingCart.js" type="module" defer></script>
 </head>
 
 <body>
@@ -26,64 +27,8 @@
                     </div>
                     <div class="mt-4 select-produtos">
                         <h4>Produtos no carrinho:</h4>
-                        <div class="row row-cols-1 g-3 content-card">
-                            <!-- Produto 1 -->
-                            <div class="col">
-                                <div class="card shadow-sm">
-                                    <img src="../../assets/combo1.jpg" class="card-img-top" alt="Combo entrada">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Combo entrada</h5>
-                                        <p class="card-text text-truncate" title="Café + Biscoito artesanal + Chocolate">
-                                            Café + Biscoito artesanal + Chocolate
-                                        </p>
-                                        <span class="fs-6 d-block mb-2">R$ 19,99</span>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <button class="btn btn-primary btn-sm add-item">Adicionar</button>
-                                            <span class="badge bg-secondary quantity">1</span>
-                                            <button class="btn btn-warning btn-sm decrease-item">Diminuir</button>
-                                            <button class="btn btn-danger btn-sm delete-item">Deletar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Produto 2 -->
-                            <div class="col">
-                                <div class="card shadow-sm">
-                                    <img src="../../assets/coxi1.webp" class="card-img-top" alt="Coxinha de bacalhau">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Coxinha de bacalhau</h5>
-                                        <p class="card-text text-truncate" title="3 unid. Coxinha de bacalhau da Noruega">
-                                            3 unid. Coxinha de bacalhau da Noruega
-                                        </p>
-                                        <span class="fs-6 d-block mb-2">R$ 14,99</span>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <button class="btn btn-primary btn-sm add-item">Adicionar</button>
-                                            <span class="badge bg-secondary quantity">1</span>
-                                            <button class="btn btn-warning btn-sm decrease-item">Diminuir</button>
-                                            <button class="btn btn-danger btn-sm delete-item">Deletar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Produto 3 -->
-                            <div class="col">
-                                <div class="card shadow-sm">
-                                    <img src="../../assets/capuccino1.jpg" class="card-img-top" alt="Capuccino">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Capuccino</h5>
-                                        <p class="card-text text-truncate" title="Capuccino com chocolate e canela">
-                                            Capuccino com chocolate e canela
-                                        </p>
-                                        <span class="fs-6 d-block mb-2">R$ 9,99</span>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <button class="btn btn-primary btn-sm add-item">Adicionar</button>
-                                            <span class="badge bg-secondary quantity">1</span>
-                                            <button class="btn btn-warning btn-sm decrease-item">Diminuir</button>
-                                            <button class="btn btn-danger btn-sm delete-item">Deletar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row row-cols-1 g-3 content-card" id="cart-items">
+                            <!-- Os itens adicionados ao carrinho aparecerão aqui -->
                         </div>
                     </div>
                 </div>
@@ -95,7 +40,7 @@
                         </div>
                         <div class="d-flex justify-content-between align-items-center mt-3">
                             <span class="fs-6">Subtotal:</span>
-                            <span class="fs-6">R$ 44,97</span>
+                            <span class="fs-6" id="subtotal">R$ 0,00</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center mt-3">
                             <span class="fs-6">Taxa de entrega:</span>
@@ -103,7 +48,7 @@
                         </div>
                         <div class="d-flex justify-content-between align-items-center mt-3">
                             <span class="fs-5 fw-bold">Total:</span>
-                            <span class="fs-5 fw-bold">R$ 49,97</span>
+                            <span class="fs-5 fw-bold" id="total">R$ 0,00</span>
                         </div>
                         <button class="btn btn-success w-100 mt-4">Finalizar Compra</button>
                     </div>
